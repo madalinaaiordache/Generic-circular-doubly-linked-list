@@ -1,0 +1,72 @@
+TEMA 1 SD - Madalina Gabriela IORDACHE 313CA
+===============================================================================
+Implementare:
+    -> Citim M comenzi de la tastatura.
+Functiile implementate:
+
+    1. create_galaxy:
+- Aloc si initializez galaxia, lista circulara dublu inlantuita ale carei
+noduri sunt planete
+
+    2. create_shields:
+- Creez lista de scuturi a fiecarei planete
+- Copiez in data fiecarui scut valoarea 1
+- Adaug un numar de scuturi in lista egal cu cel citit de la tastatura
+
+    3. add_planet = ADD:
+- Adaug planete in lista galaxy. Fiecare element planeta este de tip lista
+- Pozitiile din lista sunt indexate incepand cu 0
+- O planeta este caracterizata prin lista de scuturi, nume si kill-uri
+- Inserez planete la inceputul galaxiei, la sfarsit sau pe o pozitie arbitrara,
+- Daca pozitia pe care vreau sa inserez planeta este mai mare decat dimensiunea
+galaxiei, afisez mesajul 'Planet out of bounds!'.
+- La fiecare adaugare incrementez size-ul galaxiei
+
+    4. remove_planet = BLH:
+- Elimina planeta de pe pozitia pos_planet din lista al carei pointer este
+trimis ca parametru
+- Functia intoarce un pointer spre acest nod proaspat eliminat din lista
+- Trimit functiei un parametru 'type' ca atunci cand type = 1 sa afiseze 
+'The planet <nume_planeta> has been eaten by the vortex.'(BLH), iar pentru
+type = 1 'The planet <nume_planeta> has imploded.'(COL)
+
+    5. shield_upgrade = UPG:
+- Parcurg galaxia pana la planeta dorita, careia ii parcurg lista de scuturi 
+pana la scutul caruia vreau sa ii upgradez valoarea
+
+    6. add_shield = EXP:
+- Parcurg galaxia pana gasesc planeta careia vreau sa ii adaug un scut la final
+- Aloc memorie pentru noul scut adaugat si copiez in data acestui scut valoarea
+introdusa de la tastatura
+- Adaug scutul la sfarsitul listei de scuturi si incrementez size-ul acesteia
+
+    7. remove_shield = RMV:
+- Parcurg galaxia pana gasesc planeta careia vreau sa ii sterg un scut
+- Functia intoarce un pointer spre scutul eliminat din lista
+- Daca planeta sau scutul se afla pe o pozitie mai mare decat dimensiunea
+listei sau daca o planeta are 4 scuturi se afiseaza mesajul de eroare necesar
+- Elimin scut de la inceput, de la final sau de pe o pozitie arbitrara
+- Eliberez memoria alocata scutului respectiv
+
+    8. rotate_planet = ROT:
+- Parcurg lista pana gasesc planeta a carei lista de scuturi vreau s-o rotesc
+- Atat pentru rotirea listei in sensul acelor de ceasornic, cat si pentru cea 
+in sens trigonometric, parcurg lista de scuturi pana la scutul de unde vreau sa
+inceapa rotirea si modific head-ul si tail-ul listei
+
+    9. galactic_warfare = COL:
+- Parcurg lista pana gasesc planetele in care se realizeaza coliziunea
+- Impun conditia ca scuturile ce se vor ciocni sa fie cele de pe pozitia size/4
+respectiv, (size/4)*3, unde size este dimendiunea listei de scuturi
+- Parcurg listele de scuturi pana ajung la scuturile cautate si scad din
+fiecare cate o unitate
+- Daca o planeta cu un scut cu valoarea 0 este implicata intr-o coliziune,
+aceasta este stearsa din lista de planete
+- Daca o planeta moare, maresc kill-urile celeilalte planete
+
+    10. planet_facts = SHW:
+- Afisez informatii despre planeta de pe o anumita pozitie
+- Folosesc doua functii ajutatoare pentru a lua in considerare cazul in care o
+planeta are un singur vecin si cazul in care nu are vecini
+
+    La final eliberez memoria alocata pe parcursul programului.
